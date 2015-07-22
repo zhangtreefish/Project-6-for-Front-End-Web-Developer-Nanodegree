@@ -1,5 +1,6 @@
 1. Google Feed API: https://developers.google.com/feed/
 2. Jasmine matchers cheatsheet: http://www.cheatography.com/citguy/cheat-sheets/jasmine-js-testing/
+3. Jasmine documentation: http://jasmine.github.io/2.2/introduction.html
 
 #0. Starting State:
 1 spec, 0 failures
