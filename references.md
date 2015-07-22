@@ -1,3 +1,5 @@
+Project 6 of Udacity Front-End Nanodegree:Testing
+
 Jasmine output from feedreader.js at the Starting State:
 
 1 spec, 0 failures
@@ -10,6 +12,8 @@ Result:
 1 spec, 1 failure;
 RSS Feeds are defined;
 Expected 0 not to be 0.
+
+Following that I included a few suits per prompts in the feedreader.js file. 
 
 References:
 1. Google Feed API: https://developers.google.com/feed/
