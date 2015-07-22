@@ -16,8 +16,9 @@ Expected 0 not to be 0.
 Following that I included a few suits per prompts in the feedreader.js file. 
 
 References:
+
 1. Google Feed API: https://developers.google.com/feed/
-2. 
+
 2. Jasmine matchers cheatsheet: http://www.cheatography.com/citguy/cheat-sheets/jasmine-js-testing/
-3. 
+ 
 3. Jasmine documentation: http://jasmine.github.io/2.2/introduction.html
