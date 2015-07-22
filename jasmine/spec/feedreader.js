@@ -44,21 +44,19 @@ $(function() {
             }
          });
 
-        /* TODO: This test loops through each feed in the allFeeds object and ensures it has
+        /* This test loops through each feed in the allFeeds object and ensures it has
         a name that is defined,not empty, and of a string in nature.
          */
          it ('all entries have a defined name that is not empty', function() {
-            var allFeeds = [];
             var feedLength = allFeeds.length;
             for (i=0; i<feedLength; i++) {
                 var feed=allFeeds[i];
                 expect(feed.name).toBeDefined();
-                expect(feed.name).toNotBe(null);
+                expect(feed.name).not.toBe(null);
                 expect(typeof feed.name).toBe('string');
             }
          });
     });
-
 
     /* This is a test suite named "The menu" */
     describe('menu', function() {
