@@ -7,7 +7,7 @@ Jasmine__TopLevel__Suite
 RSS Feeds
 are defined
 
-#1: The first action(steps 5-6 in the project 6 direction) was quoting out by /* */ the content of allFeeds in app.js:
+The first action(steps 5-6 in the project 6 direction) was quoting out by /* */ the content of allFeeds in app.js:
 
 Result:
 1 spec, 1 failure;
@@ -15,7 +15,8 @@ RSS Feeds are defined;
 Expected 0 not to be 0.
 
 This is the red phase. I then restored the contents, equivalent to the green phase.
-#2. After the first action I wrote a few suits of tests following the prompt given in feedreader.js. I added a few
+
+After the first action I wrote a few suits of tests following the prompt given in feedreader.js. I added a few
 additional test per suggestions of the reviewer, as well as a test on error throwing. I tested the tests by modifying the app.js and checking for red messages.
 
 The references I used are:
