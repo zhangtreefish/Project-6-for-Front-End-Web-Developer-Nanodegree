@@ -78,7 +78,7 @@ $(function() {
             menuIcon = $('.menu-icon-link');
             if(menuIcon.onClick) {
                 expect(theClasses).toNotContain('menu-hidden');
-                expect(menuIcon.toggleClass('menu-hidden')).toBeTruthy;
+                expect(menuIcon.toggleClass('menu-hidden')).toBeTruthy();
             } else {
                     expect(theClasses).toContain('menu-hidden');
             }
