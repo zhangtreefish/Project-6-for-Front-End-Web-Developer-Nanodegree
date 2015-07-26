@@ -12,15 +12,22 @@ $(function() {
         /* This is my first test - it tests to make sure that the
           allFeeds variable has been defined and that it is not
           empty. I check for emptiness by verifying allFeeds being
-          an array AND having more than one element.
-          I also include a test that throws an error when there is no
-          feed entry.*/
+          an array AND having more than one element.*/
+        var allFeeds;
+
+        beforeEach(function() {
+            allFeeds = $('.feed');
+        });
+
         it('are defined', function() {
+            console.log(allFeeds);
             expect(allFeeds).toBeDefined();
             expect(allFeeds instanceof Array).toBeTruthy();
             expect(allFeeds.length).toBeGreaterThan(0);
         });
 
+        /*I also include a test that throws an error when there is no
+          feed entry. */
         it("throw an error when the feeds are empty", function() {
             var feedLength = allFeeds.length;
             var throwIt = function() {
@@ -35,17 +42,17 @@ $(function() {
         it has a URL that is defined,not empty,and contains url string elements.
         I use array.forEach in lieu of a for loop for a cleaner effect per reviewer 2
         suggestion  */
-        it ('all entries have a defined URL that is not empty', function() {
+        it('all entries have a defined URL that is not empty', function() {
             allFeeds.forEach(function(val){
                 expect(val.url).toBeDefined(); //this is to check it exists
                 expect(val.url).not.toBe(null);//this is to check it is not empty
                 expect(val.url).toMatch(/^http(s?)\:\/\//);//this is to check url fits formats
             });
-         });
+        });
 
         /* This test loops through each feed in the allFeeds object and ensures it has
         a name that is defined,not empty,and of a string in nature. */
-        it ('all entries have a defined name that is not empty', function() {
+        it('all entries have a defined name that is not empty', function() {
             var feedLength = allFeeds.length;
             for (i=0; i<feedLength; i++) {
                 var feed=allFeeds[i];
@@ -53,13 +60,14 @@ $(function() {
                 expect(feed.name).not.toBe(null);
                 expect(typeof feed.name).toBe('string');
             }
-         });
+        });
     });
 
     /* This is a test suite named "The menu" */
     describe('menu', function() {
         /* This test ensures that the menu element is hidden by default. */
         var theClasses;
+
         beforeEach(function() {
             theClasses = document.getElementsByTagName('body')[0].classList;
         });
@@ -87,14 +95,17 @@ $(function() {
         and completes its work, there is at least a single .entry element
         within the .feed container. loadFeed() is asynchronous so this test uses
         Jasmine's beforeEach and asynchronous done() function. */
+        var feeds;
+
         beforeEach(function(done) { //without done in the argument, Jasmine complains "done is not defined"
             loadFeed(0,done);
+            feeds = $('.feed');
             done();
-            console.log('1 '+$('.feed'));
+            console.log('1 '+ feeds);
         });
 
         it('has at least one entry', function() {
-            expect($('.feed').length).toBeGreaterThan(0);
+            expect(feeds.length).toBeGreaterThan(0);
         }); //TODO: My second reviewer suggested to remove done from the function argument and from the test, I followed but not sure.
     });
 
@@ -104,25 +115,26 @@ $(function() {
         /* This test ensures when a new feed is loaded by the loadFeed
         function that the content actually changes. Care is taken to
         address the fact that loadFeed() is asynchronous. */
+        var feedOld, feedNew;
+
         beforeEach(function(done) {
+            console.log('2 '+ $('article.entry'));
             $('.feed').empty(); //call empty() per reviewer 2 suggestion to stay free from external influence
-            var feedOld, feedNew;
             loadFeed(0,function() {
-            	console.log('2 '+$('article.entry'));//if use $('.feed'): get 'object object' in console
-            	console.log("3 " + $('article.entry')[0].textContent);//html() get the html code in console,textContent gets the content
-            	feedOld=$('article.entry')[0].textContent;
-            	loadFeed(1,function() { //if have done inside (): "done is not a function"
-            		done();
-            	});
+                console.log('3 '+$('article.entry'));//if use $('.feed'): get 'object object' in console
+                console.log("3.1 " + $('article.entry')[0].textContent);//html() get the html code in console,textContent gets the content
+                feedOld=$('article.entry')[0].textContent;
+                loadFeed(1,function() { //if have done inside (): "done is not a function"
+                done();
             });
         });
 
-            it('changes the displayed content upon loading of a new feed', function(done) {
-        		loadFeed(1,done);
-        		feedNew=$('article.entry')[1].textContent;
-        		console.log('4' + feedNew);
-            	done();//without this line,Jasmine complains "feedOld not defined" at line 136
-                expect(feedOld===feedNew).toBe(false);//TODO: console message "spec 'New Feed Selection changes the displayed content upon loading of a new feed' has no expectations."
+        it('changes the displayed content upon loading of a new feed', function(done) {
+            loadFeed(1,done);
+            feedNew=$('article.entry')[1].textContent;
+            console.log('4' + feedNew);
+            done();//without this line,Jasmine complains "feedOld not defined" at line 136
+            expect(feedOld===feedNew).toBe(false);//TODO: console message "spec 'New Feed Selection changes the displayed content upon loading of a new feed' has no expectations."
         });
     });
 }());

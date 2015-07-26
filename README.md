@@ -1,23 +1,24 @@
 Project 6 of Udacity Front-End Nanodegree:Testing
 
-Jasmine output from feedreader.js at the beginning:
+To run this testing,
+:Go to http://zhangtreefish.github.io/feedreader/
+:Make changes to the app.js file, to see if Jasmine throws any complaint in red messages.
+
+For example, Jasmine output from feedreader.js at the beginning is:
 
 1 spec, 0 failures
 Jasmine__TopLevel__Suite
 RSS Feeds
 are defined
 
-The first action(steps 5-6 in the project 6 direction) was quoting out by /* */ the content of allFeeds in app.js:
+Following steps 5-6 in the project 6 direction by quoting out (via /* */) the content of allFeeds in app.js produce the following complaint from Jasmine in red:
 
 Result:
 1 spec, 1 failure;
 RSS Feeds are defined;
 Expected 0 not to be 0.
 
-and see how Jasmine complains.
-
-After that I implement a few suits of tests following the prompt given in feedreader.js. I add a few
-additional tests per suggestions of the first reviewer, as well as a test on error throwing. I test the tests by modifying the app.js and checking for red messages.
+To test the 'RSS Feeds all entries have a defined URL that is not empty' spec,change one of the name properties of allFeeds in app.js to '' and run this code again, to see if they can check empty strings correctly.
 
 Debugging: When I run the feedreader.js I get these js console message even though Jasmine does not complain aloud:
 
