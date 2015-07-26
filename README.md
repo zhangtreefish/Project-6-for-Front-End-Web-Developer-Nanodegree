@@ -14,12 +14,12 @@ Result:
 RSS Feeds are defined;
 Expected 0 not to be 0.
 
-This is the red phase. I then restored the contents, equivalent to the green phase.
+and see how Jasmine complains.
 
-After the first action I wrote a few suits of tests following the prompt given in feedreader.js. I added a few
-additional test per suggestions of the reviewer, as well as a test on error throwing. I tested the tests by modifying the app.js and checking for red messages.
+After that I implement a few suits of tests following the prompt given in feedreader.js. I add a few
+additional tests per suggestions of the first reviewer, as well as a test on error throwing. I test the tests by modifying the app.js and checking for red messages.
 
-Debugging: When I run the feedreader.js I got these js console message even though Jasmine did not complain:
+Debugging: When I run the feedreader.js I get these js console message even though Jasmine does not complain aloud:
 
 error1: "Spec 'New Feed Selection changes the displayed content upon loading of a new feed' has no expectations."
 error2: "Uncaught TypeError: this.expectationResultFactory is not a function"
@@ -33,8 +33,7 @@ to
 
 expect(feedOld===feedNew).toBe(false); (line 125 of feedreader.js)
 
-Solution:
-errors 1 and 2 are solved by binding a function to click as suggested in reference 4.
+After much messing with the code the error 2 is gone as well.
 
 The references I used are:
 
