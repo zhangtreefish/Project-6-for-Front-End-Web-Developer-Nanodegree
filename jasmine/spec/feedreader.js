@@ -100,7 +100,6 @@ $(function() {
         beforeEach(function(done) { //without done in the argument, Jasmine complains "done is not defined"
             loadFeed(0,done);
             feeds = $('.feed');
-            done();
             console.log('1 '+ feeds);
         });
 
@@ -125,7 +124,8 @@ $(function() {
                 console.log("3.1 " + $('article.entry')[0].textContent);//html() get the html code in console,textContent gets the content
                 feedOld=$('article.entry')[0].textContent;
                 loadFeed(1,function() { //if have done inside (): "done is not a function"
-                done();
+                    done();
+                });
             });
         });
 
