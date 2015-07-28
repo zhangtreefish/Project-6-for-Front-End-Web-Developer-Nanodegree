@@ -53,11 +53,11 @@ $(function() {
         /* This test loops through each feed in the allFeeds object and ensures it has
         a name that is defined,not empty,and of a string in nature. */
         it('all entries have a defined name that is not empty', function() {
-            allFeeds.forEach(function(val)) {
+            allFeeds.forEach(function(val) {
                 expect(val.name).toBeDefined();
                 expect(val.name).not.toBe(null);
                 expect(typeof val.name).toBe('string');
-            }
+            });
         });
     });
 
