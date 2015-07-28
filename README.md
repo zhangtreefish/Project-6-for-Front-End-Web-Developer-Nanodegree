@@ -18,6 +18,8 @@ Result:
 RSS Feeds are defined;
 Expected 0 not to be 0.
 
+To test the 'RSS Feeds are defined' spec,change allFeeds to [] in app.js.
+
 To test the 'RSS Feeds all entries have a defined URL that is not empty' spec,change one of the name properties of allFeeds in app.js to '' and run this code again, to see if they can check empty strings correctly.
 
 Debugging: When I run the feedreader.js I get these js console message even though Jasmine does not complain aloud:
