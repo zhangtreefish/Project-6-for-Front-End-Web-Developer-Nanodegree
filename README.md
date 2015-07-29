@@ -36,7 +36,7 @@ expect(feedOld).not.toBe(feedNew);
 
 to
 
-expect(feedOld===feedNew).toBe(false); (line 125 of feedreader.js)
+expect(feedOld==feedNew).toBe(false); (line 125 of feedreader.js)
 
 After much messing with the code the error 2 is gone as well.
 
