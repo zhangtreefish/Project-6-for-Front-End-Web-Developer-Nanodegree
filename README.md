@@ -20,7 +20,9 @@ Expected 0 not to be 0.
 
 To test the 'RSS Feeds are defined' spec,change allFeeds to [] in app.js.
 
-To test the 'RSS Feeds all entries have a defined URL that is not empty' spec,change one of the name properties of allFeeds in app.js to '' and run this code again, to see if they can check empty strings correctly.
+To test the 'RSS Feeds all entries have a defined URL that is not empty' spec,remove 'tp://bl' from one of the url properties of allFeeds in app.js and run this code again, Jasmine threw 'Expected 'htog.udacity.com/feeds/posts/default?alt=rss' to match /^http(s?)\:\/\//.'.
+
+To test the 'RSS Feeds all entries have a defined name that is not empty", change the [name: 'Udacity Blog',] to [name:''], Jamsine throws error on the spec 'Expected 0 to be greater than 0.'
 
 Debugging: When I run the feedreader.js I get these js console message even though Jasmine does not complain aloud:
 
