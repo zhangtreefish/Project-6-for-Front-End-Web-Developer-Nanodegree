@@ -28,3 +28,7 @@ The references I used are:
 2. Jasmine matchers cheatsheet: http://www.cheatography.com/citguy/cheat-sheets/jasmine-js-testing/
 
 3. Jasmine Documentation: http://jasmine.github.io/2.2/introduction.html
+
+4. text() of jQuery vs innerHTML etc.: http://stackoverflow.com/questions/24427621/innertext-vs-innerhtml-vs-label-vs-text-vs-textcontent-vs-outertext
+
+5. comparing strings in js: http://stackoverflow.com/questions/2167602/optimum-way-to-compare-strings-in-javascript
